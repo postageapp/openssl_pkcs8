@@ -5,10 +5,20 @@ is part of standard Ruby distributions.
 
 Example:
 
-  key = OpenSSL::PKey::RSA.new(1024)
+    key = OpenSSL::PKey::RSA.new(1024)
+    
+    key.to_pem_pkcs8
+    # => "-----BEGIN PRIVATE KEY----- ..."
+
+This will export the private key in PKCS8 format, and will export public keys
+in the PUBKEY format used by OpenSSL. Note the absence of "RSA" in both of
+the headers.
   
-  key.to_pem_pkcs8
-  # => "-----BEGIN PRIVATE KEY----- ..."
+== Installation
+
+Using the Gem distribution is probably easiest:
+
+    gem install openssl_pkcs8
 
 == Copyright
 
