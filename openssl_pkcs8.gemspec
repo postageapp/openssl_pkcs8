@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = "openssl_pkcs8"
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Scott Tadman"]
@@ -26,9 +26,7 @@ Gem::Specification.new do |s|
     "VERSION",
     "ext/openssl_pkcs8/extconf.rb",
     "ext/openssl_pkcs8/openssl_pkcs8.c",
-    "ext/openssl_pkcs8/openssl_pkcs8.o",
     "lib/openssl_pkcs8.rb",
-    "openssl-pkcs8.o",
     "openssl_pkcs8.gemspec",
     "test/helper.rb",
     "test/test_openssl_pkcs8.rb"
