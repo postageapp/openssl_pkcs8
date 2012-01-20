@@ -1,6 +1,6 @@
 require 'mkmf'
 
-extension_name = 'openssl_pkcs8'
+extension_name = 'openssl_pkcs8/openssl_pkcs8'
 
 dir_config(extension_name)
 

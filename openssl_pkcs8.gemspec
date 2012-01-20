@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Scott Tadman"]
-  s.date = "2012-01-16"
+  s.date = "2012-01-20"
   s.description = "Adds PKCS8 key format support to OpenSSL::PKey::RSA"
   s.email = "github@tadman.ca"
   s.extensions = ["ext/openssl_pkcs8/extconf.rb"]
