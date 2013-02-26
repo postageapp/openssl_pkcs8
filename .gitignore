@@ -10,3 +10,4 @@ Gemfile.lock
 Makefile
 *.gem
 *.o
+mkmf.log

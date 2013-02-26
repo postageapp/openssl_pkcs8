@@ -1,4 +1,4 @@
-require 'helper'
+require_relative 'helper'
 
 class TestOpensslPkcs8 < Test::Unit::TestCase
   def test_rsa_key
