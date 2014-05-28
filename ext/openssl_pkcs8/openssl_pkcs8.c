@@ -135,6 +135,7 @@ static VALUE openssl_rsa_to_pem_pkcs8(int argc, VALUE *argv, VALUE self)
   const EVP_CIPHER *ciph = NULL;
   char *passwd = NULL;
   VALUE cipher, pass;
+  VALUE result;
 
   GetPKeyRSA(self, pkey);
 
@@ -154,26 +155,45 @@ static VALUE openssl_rsa_to_pem_pkcs8(int argc, VALUE *argv, VALUE self)
     ossl_raise(eRSAError, NULL);
   }
 
+printf(">>-->\n");
   if (RSA_HAS_PRIVATE(pkey->pkey.rsa))
   {
+    printf("PRIVVV\n");
+    if (out)
+      printf("out\n");
+    if (pkey)
+      printf("pkey\n");
+    if (pkey->pkey.rsa)
+      printf("pkey->pkey.rsa\n");
+    if (passwd)
+      printf("passwd\n");
     if (!PEM_write_bio_PKCS8PrivateKey(
-      out, pkey, ciph,
+      out, pkey->pkey.rsa, ciph,
       NULL, 0, openssl_pkcs8_pem_passwd_cb, passwd))
     {
+    printf("fAIL\n");
       BIO_free(out);
       ossl_raise(eRSAError, NULL);
     }
   }
   else
   {
+    printf("PUBSV\n");
     if (!PEM_write_bio_PUBKEY(out, pkey))
     {
+      printf("PUBSFAILS\n");
       BIO_free(out);
       ossl_raise(eRSAError, NULL);
     }
   }
 
-  return ossl_membio2str(out);
+printf(">>>\n");
+  result = ossl_membio2str(out);
+  printf(">>>\n");
+
+  BIO_free(out);
+
+  return result;
 }
 
 void Init_openssl_pkcs8()

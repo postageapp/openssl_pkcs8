@@ -25,5 +25,5 @@ Using the Gem distribution is probably easiest:
 The contents of openssl_pkcs8.c is mostly taken from the Ruby distribution and
 is licensed under exactly the same terms as the original.
 
-The remainder is (C) 2012 Scott Tadman, The Working Group Inc. under the MIT
-License.
+The remainder is (C) 2012-13 Scott Tadman, The Working Group Inc. under the
+MIT License.
