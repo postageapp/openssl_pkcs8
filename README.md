@@ -1,4 +1,4 @@
-= openssl-pkcs8
+# openssl-pkcs8
 
 This adds PKCS8 compliant key export to the OpenSSL::PKey::RSA library that
 is part of standard Ruby distributions.
@@ -14,16 +14,16 @@ This will export the private key in PKCS8 format, and will export public keys
 in the PUBKEY format used by OpenSSL. Note the absence of "RSA" in both of
 the headers.
   
-== Installation
+## Installation
 
 Using the Gem distribution is probably easiest:
 
     gem install openssl_pkcs8
 
-== Copyright
+## Copyright
 
 The contents of openssl_pkcs8.c is mostly taken from the Ruby distribution and
 is licensed under exactly the same terms as the original.
 
-The remainder is (C) 2012-13 Scott Tadman, The Working Group Inc. under the
+The remainder is (C) 2012-2014 Scott Tadman, The Working Group Inc. under the
 MIT License.
