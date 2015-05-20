@@ -22,8 +22,10 @@ VALUE ePKeyError;
 VALUE eOSSLError;
 VALUE cCipher;
 
+extern const rb_data_type_t ossl_evp_pkey_type;
+
 #define GetPKey(obj, pkey) do {\
-    Data_Get_Struct(obj, EVP_PKEY, pkey);\
+    TypedData_Get_Struct((obj), EVP_PKEY, &ossl_evp_pkey_type, (pkey)); \
     if (!pkey) { \
     	rb_raise(rb_eRuntimeError, "PKEY wasn't initialized!");\
     } \
@@ -186,6 +188,6 @@ void Init_openssl_pkcs8()
   eOSSLError = rb_const_get(mOSSL,rb_intern("OpenSSLError"));
   ePKeyError = rb_const_get(mPKey, rb_intern("PKeyError"));
   eRSAError = rb_const_get(mPKey, rb_intern("RSAError"));
-  
+
   rb_define_method(cRSA, "to_pem_pkcs8", openssl_rsa_to_pem_pkcs8, -1);
 }

@@ -22,6 +22,7 @@ Jeweler::Tasks.new do |gem|
   gem.description = %Q{Adds PKCS8 key format support to OpenSSL::PKey::RSA}
   gem.email = "github@tadman.ca"
   gem.authors = [ "Scott Tadman" ]
+  gem.required_ruby_version = '~> 2.0'
   # dependencies defined in Gemfile
 end
 
