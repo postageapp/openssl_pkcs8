@@ -1,5 +1,7 @@
 # openssl-pkcs8
 
+## Obsolete
+
 > *NOTE*: This is no longer required as Ruby 3.x includes native PKCS8 support
 in the form of the [`private_to_pem`](https://rubyapi.org/3.3/o/openssl/pkey/pkey#method-i-private_to_pem)
 method.
